@@ -3,7 +3,6 @@ FROM beakerx/beakerx:latest
 
 # it's better to be root as this Dockerfile will try to update conda etc.
 USER root
-RUN apt-get install -y --no-install-recommends graphviz
 
 # that's important to make sure the pip of the beakerx environment is in the path
 ENV PATH /opt/conda/envs/beakerx/bin:$PATH
