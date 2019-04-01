@@ -16,5 +16,9 @@ RUN pip install --no-cache-dir --upgrade pip
 # install rise and cvxpy
 RUN conda install -y -n beakerx -c conda-forge rise=5.4.1 cvxpy=1.0.14 && conda clean -y --all
 
+COPY . ${HOME}
+USER root
+RUN chown -R ${NB_UID} ${HOME}
+
 # go back to the standard user
 USER $NB_USER
