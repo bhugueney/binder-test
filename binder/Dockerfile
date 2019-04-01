@@ -22,6 +22,7 @@ RUN conda install -y -n beakerx -c conda-forge rise=5.4.1 cvxpy=1.0.14 && conda 
 # RUN wget http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiffxx5_4.0.6-1ubuntu0.6_amd64.deb
 
 RUN sudo sed -i -e 's/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+RUN apt-get update
 RUN apt-get install --yes graphviz
 
 COPY . ${HOME}
