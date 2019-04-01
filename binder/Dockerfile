@@ -20,7 +20,10 @@ COPY . ${HOME}
 
 USER root
 RUN chown -R ${NB_UID} ${HOME}
-RUN mkdir -p 
+RUN mkdir -p /tmp/share/beakerx/maven/cache
 RUN chown -R ${NB_UID} '/tmp/share/beakerx/'
+
+RUN chown -R beakerx:beakerx  /tmp/share/beakerx/ /opt/conda/envs/beakerx
+
 # go back to the standard user
 USER $NB_USER
