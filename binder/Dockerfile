@@ -16,6 +16,8 @@ RUN pip install --no-cache-dir --upgrade pip
 # install rise and cvxpy
 RUN conda install -y -n beakerx -c conda-forge rise=5.4.1 cvxpy=1.0.14 && conda clean -y --all
 
+RUN apt-get install --yes graphviz
+
 COPY . ${HOME}
 
 USER root
